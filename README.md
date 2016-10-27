@@ -42,6 +42,10 @@ or
 import RNSharedConfig from 'react-native-shared-config';
 
 // TODO: What do with the module?
-RNSharedConfig;
+RNSharedConfig.setItem('token', '5829c3a5-e93d-4758-95da-cc23501a2d3a');
+
+RNSharedConfig.getItem('token').then((t) => console.log(t));
+
+RNSharedConfig.removeItem('token');
 ```
   
