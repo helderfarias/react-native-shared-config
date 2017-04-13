@@ -16,6 +16,10 @@ RCT_EXPORT_METHOD(setItem:(NSString *)key value:(NSString *)newValue resolver:(R
 RCT_EXPORT_METHOD(getItem:(NSString *)key resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSString *value = [[PDKeychainBindings sharedKeychainBindings] stringForKey:key];
+    if (value == nil) {
+        resolve(@"");
+        return;
+    }
     
     resolve(value);
 }
