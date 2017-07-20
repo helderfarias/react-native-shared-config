@@ -10,14 +10,14 @@ RCT_EXPORT_METHOD(setItem:(NSString *)key value:(NSString *)newValue resolver:(R
 {
     [[PDKeychainBindings sharedKeychainBindings] setString:newValue forKey:key];
     
-    resolve(@"");
+    resolve(@"true");
 }
 
 RCT_EXPORT_METHOD(getItem:(NSString *)key resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     NSString *value = [[PDKeychainBindings sharedKeychainBindings] stringForKey:key];
     if (value == nil) {
-        resolve(@"");
+        resolve(@"true");
         return;
     }
     
@@ -28,7 +28,7 @@ RCT_EXPORT_METHOD(removeItem:(NSString *)key resolver:(RCTPromiseResolveBlock)re
 {
     [[PDKeychainBindings sharedKeychainBindings] removeObjectForKey:key];
     
-    resolve(@"");
+    resolve(@"true");
 }
 
 @end
