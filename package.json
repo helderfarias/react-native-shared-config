@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-shared-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Shared config for Android and iOS",
   "main": "index.js",
   "scripts": {
